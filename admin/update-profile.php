@@ -10,10 +10,9 @@ if (strlen($_SESSION['id']==0)) {
 if(isset($_POST['Submit']))
 {
 	$fname=$_POST['fname'];
-	$lname=$_POST['lname'];
-	$contact=$_POST['contact'];
-  $uid=intval($_GET['uid']);
-$query=mysqli_query($con,"update users set fname='$fname' ,lname='$lname' , contactno='$contact' where id='$uid'");
+	$police_id=$_POST['police_id'];
+	$uid=intval($_GET['uid']);
+$query=mysqli_query($con,"update users set fname='$fname' ,police_id='$police_id' where id='$uid'");
 $_SESSION['msg']="Profile Updated successfully";
 }
 ?>
@@ -105,9 +104,9 @@ $_SESSION['msg']="Profile Updated successfully";
                           </div>
                           
                               <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label" style="padding-left:40px;">Last Ename</label>
+                              <label class="col-sm-2 col-sm-2 control-label" style="padding-left:40px;">Police id</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="lname" value="<?php echo $row['lname'];?>" >
+                                  <input type="text" class="form-control" name="police_id" value="<?php echo $row['police_id'];?>" >
                               </div>
                           </div>
                           
@@ -117,12 +116,12 @@ $_SESSION['msg']="Profile Updated successfully";
                                   <input type="text" class="form-control" name="email" value="<?php echo $row['email'];?>" readonly >
                               </div>
                           </div>
-                               <div class="form-group">
+                               <!-- <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label" style="padding-left:40px;">Contact no. </label>
                               <div class="col-sm-10">
                                   <input type="text" class="form-control" name="contact" value="<?php echo $row['contactno'];?>" >
                               </div>
-                          </div>
+                          </div> -->
                             <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label" style="padding-left:40px;">Registration Date </label>
                               <div class="col-sm-10">
